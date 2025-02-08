@@ -1,0 +1,62 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+ overflow: hidden;
+ font-family: monospace, Arial, Helvetica, sans-serif;
+ line-height: 1.5;
+ color: whitesmoke;
+ background: linear-gradient(135deg, #2C3E50, #4CA1AF);
+ min-height: 100svh;
+}
+
+header{
+  height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  text-align: center;
+  padding-inline: 1em;
+}
+
+.intro-info{
+  max-width: 40rem;
+}
+
+#explore-btn{
+   padding: .1em 1.5em;
+   padding-left: .05em;
+   padding-right: 5.2em;
+   border-radius: 5rem;
+   border: none;
+   font-weight: bold;
+   display: flex;
+   align-items:center;
+   transition: background-color 700ms ease ;
+}
+
+#explore-btn:focus{
+  background-color: #4CA1AF;
+  color: white;
+}
+
+#explore-btn:focus .explore-next-icon{
+ transform: translateX(310%);
+}
+
+
+.explore-next-icon{
+   background-color: #4CA1AF;
+   fill: whitesmoke;
+  border-radius: 50%;
+  padding: .5em;
+  z-index: 99;
+  margin-right: .5em;
+  transition: all 400ms ease;
+}
+
+

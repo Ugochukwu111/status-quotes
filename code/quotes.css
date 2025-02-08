@@ -1,0 +1,30 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+ overflow: hidden;
+ font-family: monospace, Arial, Helvetica, sans-serif;
+ line-height: 1.5;
+ background-image: url(images/vecteezy_romantic-couple-silhouette-against-a-starry-sky-and-glowing_53794083.jpeg);
+ background-position: center;
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ color: whitesmoke;
+ min-height: 100svh;
+}
+
+.layout-container{
+  width: 100%;
+  height: 100svh;
+  display: grid;
+  place-items: center;
+}
+
+.quotes-holder{
+  width: 100%;
+  max-width: 20rem;
+}
