@@ -8,14 +8,27 @@ body{
  overflow: hidden;
  font-family: monospace, Arial, Helvetica, sans-serif;
  line-height: 1.5;
- background-image: url(images/vecteezy_romantic-couple-silhouette-against-a-starry-sky-and-glowing_53794083.jpeg);
+ background-image: url(/images/vecteezy_romantic-couple-silhouette-against-a-starry-sky-and-glowing_53794083.jpeg);
  background-position: center;
  background-size: cover;
  background-repeat: no-repeat;
  background-attachment: fixed;
- color: whitesmoke;
+ color: rgb(212, 46, 46);
  min-height: 100svh;
+ transition: all 250ms ease-in-out;
 }
+
+button{
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+nav{
+  text-align: end;
+  padding: 1em 1.5em;
+}
+
 
 .layout-container{
   width: 100%;
@@ -25,6 +38,26 @@ body{
 }
 
 .quotes-holder{
-  width: 100%;
-  max-width: 20rem;
+  /* width: 100%; */
+  min-width: 18rem;
+ border-radius: .5rem;
+ color: whitesmoke;
+  padding: 1.5em .8em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.1); /* Light glass effect */
+  backdrop-filter: blur(2px); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.interactive-icons {
+  display: flex;
+  justify-content: space-around;
+  padding: .5em 1em;
+  background: rgba(255, 255, 255, 0.5); 
+  border-radius: 1rem;
 }

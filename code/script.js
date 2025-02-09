@@ -44,3 +44,30 @@ const authors = [
   "Unknown"
 ];
 
+
+let backgroundImages = [
+  'url(/images/vecteezy_romantic-couple-silhouette-against-a-starry-sky-and-glowing_53794083.jpeg);',
+  'url(/images/lov8.jpg)',
+  'url(/images/lovers1.webp)',
+  'url(/images/lovers2.webp)',
+  'url(/images/lovers\ 01.webp)',
+  'url(/images/PS1_37.311_Fnt_DD_T13.jpg);',//self bkg
+  'url(/images/vecteezy_ai-generated-pixel-art-game-backgrounds-game-background_42194860.jpg)',
+  'url(/images/vecteezy_ai-generated-silhouette-of-men-rowing-reflecting-tranquil_36776641.jpg)'
+]
+let num = 0;
+
+function changeBackgroundImage() {
+setInterval (() =>{
+  console.log(num)
+  document.body.style.backgroundImage = backgroundImages[num];
+  num = (num + 1) % backgroundImages.length
+},2000)
+
+}
+
+changeBackgroundImage()
+
+
+
+console.log('ha')
