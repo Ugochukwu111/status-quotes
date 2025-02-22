@@ -44,6 +44,11 @@ const authors = [
   "Unknown"
 ];
 
+let quoteEl = document.querySelector('.quote-el');
+let writterEl = document.querySelector('.writter')
+
+let quotenum = 0 //this nuber determins the nest quote as is used as an array index
+
 // reuseable function to lose and open my music folder
 function MusicFolder(update){
   let showMusicFolder = document.querySelector('.song-container')
@@ -58,14 +63,6 @@ function closeMusicFolder(){
   MusicFolder('translateY(100%)' )
 }
 
-
-
-let quoteEl = document.querySelector('.quote-el');
-let writterEl = document.querySelector('.writter')
-
-let quotenum = 0 //this nuber determins the nest quote as is used as an array index
-
-
 //onclick  moves to next line of quote
 function nextQuote() {
   quoteEl.textContent = loveQuotes[quotenum];
@@ -74,8 +71,30 @@ quotenum = (quotenum + 1) % loveQuotes.length;
 }
 
 
+//below, Asign "myinterval" to set interval because i what to get the unique number so i can pause it
+let myinterval = setInterval (nextQuote,2000);
 
-setInterval (nextQuote,2000)
+
+
+//
+let isquoute = true // this means that quote is changing every n second
+function quotesToggle(){
+  if (isquoute){
+     clearInterval(myinterval)  //this pauses the interval
+     isquoute = false ;
+    }
+  else if (isquoute === false) {
+    myinterval = setInterval (nextQuote,2000)
+    isquoute = true;
+   }
+}
+
+
+
+
+
+
+
 
 
 // interative functions
