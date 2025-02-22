@@ -44,30 +44,42 @@ const authors = [
   "Unknown"
 ];
 
-
-let backgroundImages = [
-  'url(/images/vecteezy_romantic-couple-silhouette-against-a-starry-sky-and-glowing_53794083.jpeg);',
-  'url(/images/lov8.jpg)',
-  'url(/images/lovers1.webp)',
-  'url(/images/lovers2.webp)',
-  'url(/images/lovers\ 01.webp)',
-  'url(/images/PS1_37.311_Fnt_DD_T13.jpg);',//self bkg
-  'url(/images/vecteezy_ai-generated-pixel-art-game-backgrounds-game-background_42194860.jpg)',
-  'url(/images/vecteezy_ai-generated-silhouette-of-men-rowing-reflecting-tranquil_36776641.jpg)'
-]
-let num = 0;
-
-function changeBackgroundImage() {
-setInterval (() =>{
-  console.log(num)
-  document.body.style.backgroundImage = backgroundImages[num];
-  num = (num + 1) % backgroundImages.length
-},2000)
-
+// reuseable function to lose and open my music folder
+function MusicFolder(update){
+  let showMusicFolder = document.querySelector('.song-container')
+  showMusicFolder.style.transform = update ;
 }
 
-changeBackgroundImage()
+function showMusicFile(){
+ MusicFolder('translateY(0%)' )
+}
+
+function closeMusicFolder(){
+  MusicFolder('translateY(100%)' )
+}
 
 
 
-console.log('ha')
+let quoteEl = document.querySelector('.quote-el');
+let writterEl = document.querySelector('.writter')
+
+let quotenum = 0 //this nuber determins the nest quote as is used as an array index
+
+
+//onclick  moves to next line of quote
+function nextQuote() {
+  quoteEl.textContent = loveQuotes[quotenum];
+  writterEl.textContent = authors [quotenum];
+quotenum = (quotenum + 1) % loveQuotes.length;
+}
+
+
+
+setInterval (nextQuote,2000)
+
+
+// interative functions
+
+function playAudio() {
+
+}

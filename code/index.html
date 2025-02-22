@@ -20,10 +20,22 @@
       "Spread wisdom, motivation, and inspiration effortlessly! Our platform allows you to share beautifully crafted quotes on social media with ease, helping you engage and uplift your audience."
     </h3>
 
-    <button id="explore-btn">
+    <button onclick="exploreBtn()"  id="explore-btn">
       <svg class="explore-next-icon" xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="undefined"><path d="M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"/></svg>
       Explore
     </button>
   </header>
+
+  <script>
+      //after you click the explore btn this function takes you to "quotes.html" page
+      //but it waits for 500ms before it does that because of the setTimeout
+    function exploreBtn(){
+      setTimeout (()=> {
+         location.href = 'quotes.html';
+      },500)
+     
+    }
+
+  </script>
 </body>
 </html>
