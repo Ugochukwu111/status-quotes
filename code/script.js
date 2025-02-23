@@ -44,6 +44,7 @@ const authors = [
   "Unknown"
 ];
 
+let playIcon = document.querySelector('.play-icon');
 let quoteEl = document.querySelector('.quote-el');
 let writterEl = document.querySelector('.writter')
 
@@ -63,6 +64,23 @@ function closeMusicFolder(){
   MusicFolder('translateY(100%)' )
 }
 
+//below, Asign "myinterval" to set interval because i what to get the unique number so i can pause it
+let myinterval = setInterval (nextQuote,2000);
+
+let isquoute = true // this means that quote is changing every n second
+function quotesToggle(){
+  if (isquoute){
+     clearInterval(myinterval)
+     playIcon.style.fill = 'red'  //this pauses the interval
+     isquoute = false ;
+    }
+  else {
+    playIcon.style.fill = 'green'
+    myinterval = setInterval (nextQuote,2000)
+    isquoute = true;
+   }
+}
+
 //onclick  moves to next line of quote
 function nextQuote() {
   quoteEl.textContent = loveQuotes[quotenum];
@@ -71,34 +89,28 @@ quotenum = (quotenum + 1) % loveQuotes.length;
 }
 
 
-//below, Asign "myinterval" to set interval because i what to get the unique number so i can pause it
-let myinterval = setInterval (nextQuote,2000);
-
-
-
-//
-let isquoute = true // this means that quote is changing every n second
-function quotesToggle(){
-  if (isquoute){
-     clearInterval(myinterval)  //this pauses the interval
-     isquoute = false ;
-    }
-  else if (isquoute === false) {
-    myinterval = setInterval (nextQuote,2000)
-    isquoute = true;
-   }
-}
-
-
-
-
-
 
 
 
 
 // interative functions
+let audio = new Audio("Lana Del Rey - I've got my eyes on you (Say Yes To Heaven) (Lyrics) [rjd1mVoC6do].mp3");
+let audioIsPlaying = false;
 
 function playAudio() {
-
+   let musicIcon = document.querySelector('.music-icon');
+  if (!audioIsPlaying){
+    audio.play()
+    .then(() => console.log("Music is playing"))
+    .catch(error => alert("Playback error:" +  error.message));
+    musicIcon.style.fill = 'green';
+    audioIsPlaying = true
+  }else{
+    audio.pause();
+    audioIsPlaying = false;
+    musicIcon.style.fill = 'red'
+  }
+   
 }
+
+audio.addEventListener("pause", () => audioIsPlaying = false);//this make sure the music is paused if the user pases manually or leave the site making the music in async
